@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="dalil.Api/dalil.Api.csproj" />
+  <Project Path="dalil.Core/dalil.Core.csproj" Id="229272c2-fd65-4b74-bc9c-e9d3c653d190" />
+  <Project Path="dalil.Infra/dalil.Infra.csproj" Id="6fd4fdb0-ea0b-4c8a-9ed9-c95742dc7148" />
+</Solution>
