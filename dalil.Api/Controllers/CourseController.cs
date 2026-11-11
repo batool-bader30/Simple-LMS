@@ -13,6 +13,7 @@ namespace dalil.Api.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = Roles.Admin)]
     public class CoursesController(ICourseService courseService ,IImageService images) : ControllerBase
     {
         [HttpGet]
@@ -39,7 +40,7 @@ namespace dalil.Api.Controllers
 
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CourseResponseDto>> GetById(int id)
+        public async Task<ActionResult<CourseResponseDto>> GetById( int id)
         => Ok(await courseService.GetByIdAsync(id));
 
 
