@@ -11,6 +11,7 @@ namespace dalil.Core.Entities
         public int StudentId { get; set; }
         public Student? Student { get; set; }
         public int CourseId { get; set; }
+        public EnrollmentStatus Status { get; set; } = EnrollmentStatus.Pending;
         public Course? Course { get; set; }
         public DateTime EnrolledAt { get; set; }
     }

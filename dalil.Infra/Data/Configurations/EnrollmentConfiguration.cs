@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Text;
 
 namespace dalil.Infra.Data.Configurations
@@ -19,6 +20,7 @@ namespace dalil.Infra.Data.Configurations
             builder.HasOne(e => e.Course).WithMany(c => c.Enrollments)
             .HasForeignKey(e => e.CourseId);
             builder.Property(e => e.EnrolledAt).HasDefaultValueSql("now()");
+            builder.Property(e => e.Status).HasConversion<string>();
         }
     }
 }

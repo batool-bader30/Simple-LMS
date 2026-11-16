@@ -9,6 +9,8 @@ namespace dalil.Infra.Data.Configurations
         public void Configure(EntityTypeBuilder<Instructor> builder)
         {
             builder.HasKey(i => i.Id);
+            builder.HasIndex(s => s.FullName)
+                .IsUnique();
             builder.Property(i => i.FullName)
                 .IsRequired()
                 .HasMaxLength(150);

@@ -14,8 +14,23 @@ namespace dalil.Core.Mappings
             enrollment.StudentId,
             enrollment.Student?.Name ?? string.Empty,
             enrollment.CourseId,
+            enrollment.Status.ToString(),
             enrollment.Course?.Title ?? string.Empty,
             enrollment.EnrolledAt);
+        public static Enrollment ToEntity(this CreateEnrollmentDto dto) => new()
+        {
+            StudentId = dto.StudentId,
+            CourseId = dto.CourseId,
+            
+        };
+        public static Enrollment ToEntity(this UpdateEnrollmentStatusDto dto) => new()
+        {
+            StudentId = dto.StudentId,
+            CourseId = dto.CourseId,
+            Status = Enum.Parse<EnrollmentStatus>(dto.Status),
+            
+        };
     }
+    
 
 }

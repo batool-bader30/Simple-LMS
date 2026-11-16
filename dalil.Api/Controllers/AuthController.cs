@@ -8,8 +8,8 @@ using static dalil.Core.DTOs.StudentDto;
 
 namespace dalil.Api.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [ApiController]
+    
+        [ApiController]
         [Route("api/[controller]")]
         public class AuthController(IAuthService auth) : ControllerBase
         {

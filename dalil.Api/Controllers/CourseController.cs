@@ -13,7 +13,7 @@ namespace dalil.Api.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = Roles.Admin)]
+    [AllowAnonymous]
     public class CoursesController(ICourseService courseService ,IImageService images) : ControllerBase
     {
         [HttpGet]
@@ -26,7 +26,6 @@ namespace dalil.Api.Controllers
         }
 
         [HttpPost("upload-image")]
-        [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> UploadImage(IFormFile file)
         {
             await using var stream = file.OpenReadStream();
